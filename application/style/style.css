@@ -1,0 +1,764 @@
+/*******************************************************************************
+The default style sheet used to render HTML.
+/******************************************************************************/
+html, address,
+blockquote,
+body, dd, div,
+dl, dt, fieldset, form,
+frame, frameset,
+h1, h2, h3, h4,
+h5, h6, noframes,
+ol, p, ul, center,
+dir, hr, menu, pre   { display: block; unicode-bidi: embed }
+li              { display: list-item }
+head            { display: none }
+table           { display: table }
+tr              { display: table-row }
+thead           { display: table-header-group }
+tbody           { display: table-row-group }
+tfoot           { display: table-footer-group }
+col             { display: table-column }
+colgroup        { display: table-column-group }
+td, th          { display: table-cell }
+caption         { display: table-caption }
+th              { font-weight: bolder; text-align: center }
+caption         { text-align: center }
+body            { margin: 8px }
+h1              { font-size: 2em; margin: .67em 0 }
+h2              { font-size: 1.5em; margin: .75em 0 }
+h3              { font-size: 1.17em; margin: .83em 0 }
+h4, p,
+blockquote, ul,
+fieldset, form,
+ol, dl, dir,
+menu            { margin: 1.12em 0 }
+h5              { font-size: .83em; margin: 1.5em 0 }
+h6              { font-size: .75em; margin: 1.67em 0 }
+h1, h2, h3, h4,
+h5, h6, b,
+strong          { font-weight: bolder }
+blockquote      { margin-left: 40px; margin-right: 40px }
+i, cite, em,
+var, address    { font-style: italic }
+pre, tt, code,
+kbd, samp       { font-family: monospace }
+pre             { white-space: pre }
+button, textarea,
+input, select   { display: inline-block }
+big             { font-size: 1.17em }
+small, sub, sup { font-size: .83em }
+sub             { vertical-align: sub }
+sup             { vertical-align: super }
+table           { border-spacing: 2px; }
+thead, tbody,
+tfoot           { vertical-align: middle }
+td, th, tr      { vertical-align: inherit }
+s, strike, del  { text-decoration: line-through }
+hr              { border: 1px inset }
+ol, ul, dir,
+menu, dd        { margin-left: 40px }
+ol              { list-style-type: decimal }
+ol ul, ul ol,
+ul ul, ol ol    { margin-top: 0; margin-bottom: 0 }
+u, ins          { text-decoration: underline }
+br:before       { content: "\A"; white-space: pre-line }
+center          { text-align: center }
+:link, :visited { text-decoration: underline }
+:focus          { outline: thin dotted invert }
+
+/* Begin bidirectionality settings (do not change) */
+BDO[DIR="ltr"]  { direction: ltr; unicode-bidi: bidi-override }
+BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override }
+
+*[DIR="ltr"]    { direction: ltr; unicode-bidi: embed }
+*[DIR="rtl"]    { direction: rtl; unicode-bidi: embed }
+
+@media print {
+  h1            { page-break-before: always }
+  h1, h2, h3,
+  h4, h5, h6    { page-break-after: avoid }
+  ul, ol, dl    { page-break-before: avoid }
+}
+/*******************************************************************************
+Generals rules for html and body
+*******************************************************************************/
+html { height: 100%; }
+body {
+   margin: 0;
+   padding: 0;
+   padding-bottom: 100px;
+   font-family: 'Raleway', sans-serif;
+   word-spacing: 5px;
+   min-height: 100%;
+   line-height: 22px;
+   position: relative;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/*styling pre tag for source code displaying*/
+pre {
+  font-family: 'Source Code Pro', monospace;
+  color: #204056;
+  font-weight: lighter;
+  font-size: 1.1em;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  display: inline;
+  padding-left: 0;
+	}
+	
+/*******************************************************************************
+Responsive navigation top bar
+/******************************************************************************/
+.topnav {
+    background-color: #f5f5f5;
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+} /* Add a black background color to the top navigation */
+.topnav a {
+    float: left;
+    display: block;
+    color: #363636;
+    text-align: center;
+    padding: 0;
+    margin: 0 16px;
+    margin-top: 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    height: 45px;
+} 
+#logo {
+    width: 270px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#logo:hover {
+  box-shadow: none;
+  opacity: 0.7;
+}
+#logo_image {
+    width: 100%;
+}
+#user_initials {
+  background: #ae4157;
+  height: 25px;
+  width: 40px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 14px;
+  padding-top: 7px;
+  float: right;
+  padding-left:0;
+  margin-left: 0;
+}
+#user_initials:hover {
+  opacity: 0.7;
+}
+.topnav a:hover {
+    background-color: transparent;
+    color: #ae4157;
+    box-shadow: inset 0 -3px 0 #ae4157; 
+} 
+
+#logoutIcon {
+  width: 25px;
+  height: 30px;
+  margin-top:0;
+  padding: 0;
+}
+#logoutIcon:hover {
+  opacity: 0.7;
+  box-shadow: none;
+}
+#floatRight {
+  float: right;
+}
+#catalog {
+  float: right;
+  margin-top: 10px;
+}
+#formAlignment {
+  float: right;
+}
+
+@media screen and (max-width: 800px) {
+  .gradient_text {
+    font-size: 0.5em;
+  }
+  #gradient p {
+    font-size: 1.4em;
+    padding-left: 20px;
+  }
+  #formAlignment {
+    float: left;
+  }
+}
+
+.button {
+  border: none;
+  background: none;
+  color: #363636;
+  font-size: 1.2em;
+  height: 55px;
+}
+.button:hover {
+  background-color: transparent;
+  color: #2e2ecc;
+  box-shadow: inset 0 -3px 0 #2e2ecc; 
+  cursor: pointer;
+}
+
+/*******************************************************************************
+Home page
+/******************************************************************************/
+#examImage {
+  max-width: 100%;
+}
+
+.PageWrap {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #FEFEFE;
+  line-height: 27px;
+}
+.oneSideBorder {
+  border-bottom: 3px solid #31a496;
+  border-left: 3px solid #31a496;
+  border-radius: 0 0 30px 15px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  
+}
+/*******************************************************************************
+Modal Content for registration window
+/******************************************************************************/
+/* The Modal (background) */
+.modal { 
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    text-align: center;
+} 
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    z-index: 100;
+} 
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+} 
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*******************************************************************************
+Sign In and Sign Up Form
+/******************************************************************************/
+#loginForm {
+  width: 100%;
+  height: 20px;
+  margin-top:5px;
+  float: right;
+  display: block;
+}
+.input_field {
+  height: 20px;
+  background: #fbfbfb;
+  color: #2e2ecc;
+  font-size: 1.2em;
+  width: 150px;
+  margin-top: 11px;
+}
+input::placeholder {
+  color: grey;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+  padding-left:5px;
+}
+.input_field_register {
+  width: 100%;
+  height: 30px;
+  background: #f5f5f5;
+  color: #2e2ecc;
+  font-size: 1.2em;
+  margin-top: 11px;
+}
+#regForm {
+  width: 100%;
+  text-align: center;
+}
+/*******************************************************************************
+Quizzes Page/Catalogue
+/******************************************************************************/
+#gradient {
+    width: 100%;
+    height: 150px;
+    background: #33af9d;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(135deg, #21475a, #33af9d);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(135deg, #21475a, #33af9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.gradient_text {
+  margin: 0;
+  color: white;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 30px;
+  font-weight: lighter;
+  padding-left: 100px;
+  line-height: 35px;
+}
+.flex-box {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #F5F5F5;
+    padding-top: 20px;
+    height: 100%;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+.subjectWrap {
+  margin: 10px;
+}
+.subject_logo {
+  width: 100%;
+  height: 150px;
+  background: white;
+}
+.subject_logo:hover {
+  background: #a5cfd5;
+}
+.subject_content {
+  width: 250px;
+  height: 200px;
+  background: white;
+  position: relative;
+  color: grey;
+}
+
+#subjecDescription {
+  padding: 10px;
+  margin:0;
+}
+.subjectName {
+  padding-left: 15px;
+  margin: 0;
+  padding-top: 10px;
+  font-size: 20px;
+  color: #ae4157;
+}
+
+.levelLinks {
+  width: 230px;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+  color: grey;
+  position: relative;
+  border: 1px solid #dbeff1;
+}
+.levelLinks:hover {
+  background-color: #d5eeeb;
+}
+.hiddenLevelLinks {
+  width: 230px;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+  color: grey;
+  position: relative;
+  pointer-events: none;
+  cursor: default;
+  border: 1px solid #dbeff1;
+}
+.lock {
+  position: absolute;
+  right: 40px;
+}
+#alignBottom {
+  bottom: 0;
+  position: absolute;
+}
+/*******************************************************************************
+Take test page
+/******************************************************************************/
+
+#testForm {
+  max-width: 800px;
+  margin: 0 auto;
+  visibility: visible;
+  padding: 30px 0;
+}
+.hidden {
+  display: inline;
+}
+#answers {
+  margin-left: 40px;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.linkButton {
+  text-decoration: none;
+  font-size: 1.4em;
+  color: #bb312e;
+}
+.takeTest {
+  width: 100%;
+  margin: 30px;
+  text-align: center;
+}
+.linkButton {
+  border: 1px solid #bb312e;
+  padding: 10px;
+  border-radius: 10px;
+}
+#tipsDiv {
+  width: 100%;
+  color: #1ca1e0;
+  font-size: 40px;
+}
+#tips {
+  width: 80px;
+}
+.linkButton:hover {
+  cursor: pointer;
+  background-color: #9dd3d8;
+  font-weight: bold;
+}
+.testFormWrap {
+  border: 1px solid #eeeeee;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 15px;
+}
+#results {
+  height: 100%;
+  width: 100%;
+}
+.mcqForm {
+  margin-top: 50px;
+}
+#questions {
+  margin: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.answers {
+  font-family: 'Source Code Pro', monospace;
+  display: inline;
+}
+.score {
+  color: #6aa877;
+  font-size: 1.3em;
+}
+.correct {
+  background-color: #6aa877;
+  max-width: 790px;
+  padding-left: 10px;
+  font-weight: bold;
+  height: 100%;
+  margin-top: 5px;
+  width: 100%;
+}
+.incorrect {
+  background-color: #ed9098;
+  max-width: 790px;
+  padding-left: 10px;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 5px;
+  height: 100%;
+}
+#timer {
+  background-color:#419D78;
+  color:#EFD0CA;
+  font-size:20px;
+  text-align:center;
+  -webkit-transform: translate3d(0, 0, 0); /*position fixed for Crhome*/
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: inline;
+}
+
+.quizButton {
+  width: 100%;
+  border: none;
+  background: #f5f5f5;
+  font-size: 1.5em;
+  color: #bb312e;
+  text-align: center;
+  border: 1px solid #e4f6f8;
+  height: 55px;
+  text-decoration: none;
+  vertical-align: center;
+}
+
+.quizButton:hover {
+  color: #ed9098;
+  cursor: pointer;
+  background-color: #d5ebe8;
+}
+
+.fullWidthBox {
+  border: 1px solid #eeeeee;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #fdfdfd;
+}
+
+.green {
+  color: #61999e;
+  font-weight: bold;
+}
+.levelName {
+  color: #bb312e;
+  font-size: 1.3em;
+}
+/******************************************************************************
+Admin Page
+******************************************************************************/
+.dropdown {
+  font-size: 15px;
+  height: 25px;
+}
+
+#subjectFilter {
+  display: none;
+}
+#level {
+  display: none;
+}
+
+#filter {
+  display: flex;
+}
+
+.filter_button {
+  height: 30px;
+}
+
+.updateField {
+  width: 100%;
+  border: none;
+  height: 100%;
+  background-color: #dbe8f5;
+  padding: 5px;
+  font-size: 1em;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+table {
+  font-family: 'Raleway', sans-serif;
+  border-collapse: collapse;
+  font-size: 1.1em;
+  margin: 0;
+}
+.adminTable tr td {
+  background-color: #f3f3f3;
+  border: 1px solid grey;
+  margin: 0;
+  padding: 5px;
+  height: 100%;
+  min-width: 80px;
+}
+.adminTable {
+  padding: 0;
+  table-layout: fixed; max-width: 1400px;
+  margin-top:0;
+  word-wrap:break-word;
+  position: absolute;
+  top: 100px;
+  margin-left: 30px;
+}
+.adminTable tr th {
+  background-color: #f3f3f3;
+  border: 1px solid grey;
+  margin: 0;
+  text-align: left;
+  padding: 5px;
+}
+.adminTable tr th {
+  background-color: #ae4157;
+}
+.smallColumn {
+  width: 70px;
+}
+.mediumColumn {
+  width: 100px;
+}
+.largeColumn {
+  width: 250px;
+}
+.selectForm {
+  height: 60px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.adminBody {
+  margin: 20px;
+  margin-top:0;
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+}
+
+.manageButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  color: red;
+  font-size: 1em;
+}
+
+.manageButton:hover {
+  color: grey;
+}
+
+/*******************************************************************************
+User details page
+*******************************************************************************/
+.userDetails {
+  height: 35px;
+  font-family: 'Raleway', sans-serif;
+  padding-left: 10px;
+  font-size: 1.1em;
+  background-color: #e8f5f3;
+}
+.userDetailsBody {
+  max-width: 1000px;
+  background-color: #F5F5F5;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 1.1em;
+  padding: 15px 40px;
+}
+#datefrom {
+  max-width: 120px;
+  background-color: #e8f5f3;
+}
+#dateto {
+  max-width: 120px;
+  background-color: #e8f5f3;
+}
+.userDetailsForm {
+  max-width: 450px;
+}
+.userDetailsFilter {
+  width: 100%;
+  height: 40px;
+  background-color: #e8f5f3;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1em;
+}
+#date {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#username {
+  font-size: 1.2em;
+}
+.user {
+  margin: 0;
+  font-size: 1.2em;
+}
+#userResults {
+  max-width: 550px;
+}
+#userResults tr td {
+  background-color: #f3f3f3;
+  border: 1px solid grey;
+  margin: 0;
+  padding: 5px 5px;
+  height: 100%;
+  min-width: 80px;
+}
+
+/*******************************************************************************
+Footer
+*******************************************************************************/
+footer {
+  height: 80px;
+  padding-top: 10px;
+  background-color: #f5f5f5;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#media {
+  width: 155px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+}
+
+.media_icon {
+  width: 45px;
+  height: 45px;
+  margin:0;
+}
+
+.media_icon:hover {
+  opacity: 0.7;
+}
+
+.contact {
+  text-decoration: none;
+  color: #224d5e;
+}
