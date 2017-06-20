@@ -25,7 +25,7 @@ require('vendor/autoload.php');
 <div id="gradient"><p class="gradient_text">Welcome to Multiple Choice Questions website! <br>Here you can take tests for free!</p></div>
 <div class="PageWrap">
     <div>
-        <img id="examImage" src="/application/images/exam.jpg">
+        <img id="examImage" src="final_project/application/images/exam.jpg">
     </div>
     <div class="oneSideBorder">
         <h2>What is Multiple Choice Questions?</h2>
