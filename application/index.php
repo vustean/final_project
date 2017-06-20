@@ -1,4 +1,5 @@
 <?php
+require('vendor/autoload.php');
 //setting dynamic page title;
     $pageTitle = 'Home';
 /*******************************************************************************
